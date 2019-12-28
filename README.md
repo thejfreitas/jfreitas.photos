@@ -1,3 +1,3 @@
-# jfreitas.dev
+# jfreitas.photos
 
-My personal website
+My photography portifolio

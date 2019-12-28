@@ -2,7 +2,6 @@ import React from "react"
 
 export default () => {
     const year = `2019`;
-
     return (
         <footer>
             <div className="container">

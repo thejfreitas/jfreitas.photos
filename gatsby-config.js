@@ -12,19 +12,19 @@ module.exports = {
     description: `This is my photography portifolio. Enjoy!`,
     externalSites: [
       {
+        name: `Behance`,
+        url: `https://www.behance.net/freitaseye`,
+        icon: `${__dirname}/src/img/behance.svg`
+      },
+      {
         name: `Instagram`,
         url: `https://instagram.com/freitas.eye`,
-        icon: `instagram.svg`
+        icon: `${__dirname}/src/img/instagram.svg`
       },
       {
         name: `Personal Website`,
         url: `https://juniorfreitas.net`,
-        icon: ``
-      },
-      {
-        name: `Behance`,
-        url: `https://www.behance.net/freitaseye`,
-        icon: `behance.svg`
+        icon: `${__dirname}/src/img/globe.svg`
       },
     ]
   },
