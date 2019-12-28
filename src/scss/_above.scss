@@ -1,0 +1,37 @@
+header {
+    height: 100vh;
+    background-color: lightcoral;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    .headline-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+}
+
+.main-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    ul {
+        display: inline;
+        a {
+            font-weight: bold;
+            &:not(:last-child) {
+                margin-right: 3rem !important;
+            }
+            img {
+                width: 3rem;
+                margin-right: 0.5rem;
+                margin-bottom: -0.7rem;
+            }
+            li {
+                display: inline;
+            }
+        }
+    }
+}
