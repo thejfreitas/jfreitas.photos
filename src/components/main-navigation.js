@@ -1,16 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
-import behanceLogo from "../img/behance.svg"
 
 export default ({ externalSites }) => {
     return (
         <nav>
             <ul>
-                {externalSites.map((site) => {
+                {externalSites.map((site, i) => {
                     return (
-                        <a target="_blank" rel="noopener noreferrer" href={site.url}>
-                            <img src={behanceLogo} alt={site.name} />
-                            <li>{site.name}</li>
+                        <a key={i} target="_blank" rel="noopener noreferrer" href={site.url}>
+                            <li className={site.class}>{site.name}</li>
                         </a>
                     );
                 })}

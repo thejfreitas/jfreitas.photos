@@ -34,7 +34,7 @@ export const query = graphql`
         externalSites {
           name
           url
-          icon
+          class
         }
       }
     }

@@ -52,9 +52,10 @@ a {
     &,
     &:link,
     &:visited {
-        color: black;
+        @include default-transition;
+        color: $white;
     }
     &:hover {
-        color: lighten(black, 10%);
+        color: darken($white, 10%);
     }
 }

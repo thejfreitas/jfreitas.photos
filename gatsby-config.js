@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
+const path = require('path');
 
 module.exports = {
   siteMetadata: {
@@ -14,23 +15,41 @@ module.exports = {
       {
         name: `Behance`,
         url: `https://www.behance.net/freitaseye`,
-        icon: `${__dirname}/src/img/behance.svg`
+        class: `ico-behance`
       },
       {
         name: `Instagram`,
         url: `https://instagram.com/freitas.eye`,
-        icon: `${__dirname}/src/img/instagram.svg`
+        class: `ico-instagram`
       },
       {
         name: `Personal Website`,
         url: `https://juniorfreitas.net`,
-        icon: `${__dirname}/src/img/globe.svg`
+        class: `ico-globe`
       },
     ]
   },
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: { path: path.join(__dirname, `src`) }
+
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+          },
+          `gatsby-remark-lazy-load`,
+        ]
+      }
+    },
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
