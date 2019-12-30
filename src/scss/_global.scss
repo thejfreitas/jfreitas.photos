@@ -5,7 +5,7 @@ html {
 
 body {
     font-family: "Give You Glory", cursive;
-    height: auto;
+    min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     animation: bg-animation 60s ease 0.1s infinite;
@@ -88,6 +88,12 @@ h1 {
 }
 h2 {
     font-size: 6rem;
+    @media (max-width: $breakpoint-md) {
+        font-size: 4rem;
+    }
+    @media (max-width: $breakpoint-sm) {
+        font-size: 3rem;
+    }
 }
 h3 {
     font-size: 4rem;
@@ -289,6 +295,12 @@ header {
             }
         }
     }
+}
+
+.fallback-area {
+    color: $white;
+    text-align: center;
+    padding: 10rem 0;
 }
 
 footer {
