@@ -30,15 +30,15 @@ export default () => {
             }    
         }`
     )
-    console.log(pageData);
 
     return (
         <Layout>
             <header className="internal-header container">
                 <InternalNavigation headline={pageData.site.siteMetadata.headline} />
                 <SocialNavigation externalSites={pageData.site.siteMetadata.externalSites} />
+
             </header>
-            <section className="container">
+            <section className="container gallery-area">
                 {pageData.gal.nodes.map(image => (
                     <Img key={image.id} fluid={image.childImageSharp.fluid} />
                 ))}
