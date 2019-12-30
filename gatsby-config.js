@@ -15,39 +15,27 @@ module.exports = {
       {
         name: `Behance`,
         url: `https://www.behance.net/freitaseye`,
-        class: `ico-behance`
       },
       {
         name: `Instagram`,
         url: `https://instagram.com/freitas.eye`,
-        class: `ico-instagram`
       },
       {
         name: `Personal Website`,
         url: `https://juniorfreitas.net`,
-        class: `ico-globe`
       },
     ]
   },
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
-      options: { path: path.join(__dirname, `src`) }
-
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-          },
-          `gatsby-remark-lazy-load`,
-        ]
+        name: `gallery`,
+        path: path.join(__dirname, `src/img/gallery`)
       }
     },
     {
