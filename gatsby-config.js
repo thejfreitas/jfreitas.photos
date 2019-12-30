@@ -21,7 +21,7 @@ module.exports = {
         url: `https://instagram.com/freitas.eye`,
       },
       {
-        name: `Personal Website`,
+        name: `About Me`,
         url: `https://juniorfreitas.net`,
       },
     ]

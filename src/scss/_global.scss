@@ -23,6 +23,12 @@ body {
             rgba(0, 0, 0, 0.8) 80%
         );
     }
+    @media (max-width: $breakpoint-lg) {
+        padding: 0 1.5rem;
+    }
+    @media (max-width: $breakpoint-md) {
+        padding: 1.5rem;
+    }
 }
 
 @keyframes bg-animation {
@@ -49,6 +55,12 @@ ul li,
 ol li,
 a {
     font-size: 2.2rem;
+    @media (max-width: $breakpoint-md) {
+        font-size: 2rem;
+    }
+    @media (max-width: $breakpoint-sm) {
+        font-size: 1.8rem;
+    }
 }
 
 p {
@@ -67,6 +79,12 @@ h6 {
 
 h1 {
     font-size: 8rem;
+    @media (max-width: $breakpoint-md) {
+        font-size: 6rem;
+    }
+    @media (max-width: $breakpoint-sm) {
+        font-size: 4rem;
+    }
 }
 h2 {
     font-size: 6rem;
@@ -102,31 +120,46 @@ header {
         height: 95vh;
         @media (max-width: $breakpoint-sm) {
             align-items: flex-start;
-            padding: 1.5rem;
         }
     }
     &.internal-header {
         display: flex;
         justify-content: space-between;
-        flex-direction: row-reverse;
+        flex-direction: row;
         padding: 5rem 0 0 0;
+        @media (max-width: $breakpoint-md) {
+            padding: 2.5rem 0 0 0;
+        }
+
         nav {
             display: flex;
             width: 100%;
             justify-content: space-between;
             flex-direction: row;
             align-items: center;
+            @media (max-width: $breakpoint-md) {
+                flex-direction: column;
+                .social-links {
+                    margin-top: 2rem;
+                }
+            }
             li {
                 display: inline;
                 a {
                     &:not(:last-child) {
                         margin-right: 3rem;
+                        @media (max-width: $breakpoint-sm) {
+                            margin-right: 1.5rem;
+                        }
                     }
                 }
             }
             .headline {
                 font-size: 4.8rem;
                 font-weight: bold;
+                @media (max-width: $breakpoint-sm) {
+                    font-size: 4rem;
+                }
             }
         }
     }
@@ -165,7 +198,10 @@ header {
             border-radius: 2rem;
             font-weight: bold;
             &:not(:last-child) {
-                margin-right: 3rem !important;
+                margin-right: 3rem;
+                @media (max-width: $breakpoint-sm) {
+                    margin-right: 1.5rem;
+                }
             }
             li {
                 z-index: 2;
@@ -198,17 +234,6 @@ header {
     }
 }
 
-footer {
-    display: flex;
-    justify-content: space-between;
-    color: $white;
-    height: 5vh;
-    p,
-    a {
-        font-size: 1.6rem;
-    }
-}
-
 .gallery-area {
     padding: 5rem 0;
     display: grid;
@@ -217,15 +242,17 @@ footer {
     grid-row-gap: 1.5rem;
     grid-auto-rows: auto;
     grid-auto-flow: dense;
+    --borderSize: 1rem;
+    --imgScale: 1.05;
     .gatsby-image-wrapper {
         @include default-transition;
-        border: 1rem rgba($white, 0.8) solid;
+        border: var(--borderSize) rgba($white, 0.8) solid;
         backface-visibility: hidden;
         z-index: 2;
         overflow: inherit;
         &:hover {
-            transform: scale(1.05);
-            border: 1rem rgba($white, 1) solid;
+            transform: scale(var(--imgScale));
+            border: var(--borderSize) rgba($white, 1) solid;
         }
         &:nth-child(4) {
             grid-row: span 3;
@@ -237,5 +264,50 @@ footer {
             grid-column: span 2;
             grid-row: span 4;
         }
+    }
+    @media (max-width: $breakpoint-md) {
+        padding: 3.5rem 0;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        .gatsby-image-wrapper {
+            --borderSize: 0.5rem;
+            --imgScale: 1.02;
+        }
+    }
+    @media (max-width: $breakpoint-sm) {
+        grid-template-columns: auto;
+        .gatsby-image-wrapper {
+            &:nth-child(2) {
+                grid-column: span 2;
+            }
+            &:nth-child(4) {
+                grid-column: span 2;
+            }
+
+            &:nth-child(6) {
+                grid-row: unset;
+                grid-column: unset;
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: $breakpoint-lg) {
+        justify-content: space-around;
+    }
+    @media (max-width: $breakpoint-md) {
+        flex-direction: column-reverse;
+        align-items: center;
+        p {
+            margin-bottom: 1.5rem;
+        }
+    }
+    color: $white;
+    height: 5vh;
+    p,
+    a {
+        font-size: 1.6rem;
     }
 }
