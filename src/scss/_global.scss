@@ -109,8 +109,25 @@ header {
         display: flex;
         justify-content: space-between;
         flex-direction: row-reverse;
-        .social-navigation {
-            margin-top: 0;
+        padding: 5rem 0 0 0;
+        nav {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+            li {
+                display: inline;
+                a {
+                    &:not(:last-child) {
+                        margin-right: 3rem;
+                    }
+                }
+            }
+            .headline {
+                font-size: 4.8rem;
+                font-weight: bold;
+            }
         }
     }
 
@@ -137,43 +154,44 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-top: 3rem;
-    ul {
-        a {
-            &,
-            &:link,
-            &:visited {
-                transition: all 0.2s ease;
-                border-radius: 2rem;
-                font-weight: bold;
-                &:not(:last-child) {
-                    margin-right: 3rem !important;
-                }
-                li {
-                    z-index: 2;
-                    position: relative;
-                    display: inline;
-                    &::before {
-                        transition: ease all 0.2s;
-                        content: "";
-                        height: 0.4rem;
-                        bottom: 0.5rem;
-                        position: absolute;
-                        background: transparent;
-                        width: 0%;
-                        border-radius: 1rem;
-                    }
+}
+
+.social-links {
+    a {
+        &,
+        &:link,
+        &:visited {
+            transition: all 0.2s ease;
+            border-radius: 2rem;
+            font-weight: bold;
+            &:not(:last-child) {
+                margin-right: 3rem !important;
+            }
+            li {
+                z-index: 2;
+                position: relative;
+                display: inline;
+                &::before {
+                    transition: ease all 0.2s;
+                    content: "";
+                    height: 0.4rem;
+                    bottom: 0.5rem;
+                    position: absolute;
+                    background: transparent;
+                    width: 0%;
+                    border-radius: 1rem;
                 }
             }
-            &:hover {
-                li {
-                    &::before {
-                        width: 100%;
-                        background: linear-gradient(
-                            150deg,
-                            rgba(255, 255, 255, 0.8) 20%,
-                            rgba(255, 0, 0, 1) 80%
-                        );
-                    }
+        }
+        &:hover {
+            li {
+                &::before {
+                    width: 100%;
+                    background: linear-gradient(
+                        150deg,
+                        rgba(255, 255, 255, 0.8) 20%,
+                        rgba(255, 0, 0, 1) 80%
+                    );
                 }
             }
         }
@@ -192,22 +210,22 @@ footer {
 }
 
 .gallery-area {
-    padding: 10rem 0;
+    padding: 5rem 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    grid-column-gap: 3rem;
-    grid-row-gap: 3rem;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1.5rem;
     grid-auto-rows: auto;
     grid-auto-flow: dense;
     .gatsby-image-wrapper {
         @include default-transition;
-        border: 1.5rem rgba($white, 0.8) solid;
+        border: 1rem rgba($white, 0.8) solid;
         backface-visibility: hidden;
         z-index: 2;
         overflow: inherit;
         &:hover {
             transform: scale(1.05);
-            border: 1.5rem rgba($white, 1) solid;
+            border: 1rem rgba($white, 1) solid;
         }
         &:nth-child(4) {
             grid-row: span 3;

@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../templates/layout-wrap"
 import Img from "gatsby-image"
-import SocialNavigation from "../components/social-navigation"
 import InternalNavigation from "../components/internal-navigation"
 
 export default () => {
@@ -34,9 +33,7 @@ export default () => {
     return (
         <Layout>
             <header className="internal-header container">
-                <InternalNavigation headline={pageData.site.siteMetadata.headline} />
-                <SocialNavigation externalSites={pageData.site.siteMetadata.externalSites} />
-
+                <InternalNavigation siteMetadata={pageData.site.siteMetadata} />
             </header>
             <section className="container gallery-area">
                 {pageData.gal.nodes.map(image => (
