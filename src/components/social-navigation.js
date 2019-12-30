@@ -2,7 +2,7 @@ import React from "react"
 
 export default ({ externalSites }) => {
     return (
-        <nav>
+        <nav className="social-navigation container">
             <ul>
                 {externalSites.map((site, i) => {
                     return (

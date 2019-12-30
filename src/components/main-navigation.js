@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
-export default ({ externalSites }) => {
+export default () => {
     return (
-        <nav>
+        <nav className="main-navigation container">
             <ul>
                 <Link to="/portifolio">
                     <li>Check My Portifolio</li>

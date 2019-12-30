@@ -1,11 +1,31 @@
 html {
     font-size: 62.5%;
+    background: linear-gradient(
+        150deg,
+        rgba(180, 93, 136, 1) 5%,
+        rgba(255, 0, 0, 0.6) 80%
+    );
 }
 
 body {
-    overflow-x: hidden;
     font-family: "Give You Glory", cursive;
     height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    &:before {
+        content: "";
+        background: linear-gradient(
+            150deg,
+            rgba(180, 93, 136, 1) 5%,
+            rgba(255, 0, 0, 0.6) 80%
+        );
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 }
 
 p,
@@ -63,12 +83,24 @@ a {
 }
 
 header {
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+    &.headline-intro {
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        height: 95vh;
+        @media (max-width: $breakpoint-sm) {
+            align-items: flex-start;
+            padding: 1.5rem;
+        }
+    }
+    &.internal-header {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        .social-navigation {
+            margin-top: 0;
+        }
+    }
 
     .headline-content {
         display: flex;
@@ -78,19 +110,6 @@ header {
         z-index: 2;
         color: $white;
         text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
-    }
-    &:before {
-        content: "";
-        background: linear-gradient(
-            150deg,
-            rgba(180, 93, 136, 1) 5%,
-            rgba(255, 0, 0, 0.6) 80%
-        );
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
     }
 }
 
@@ -107,7 +126,6 @@ header {
     align-items: center;
     margin-top: 3rem;
     ul {
-        display: inline;
         a {
             &,
             &:link,
@@ -120,8 +138,8 @@ header {
                 }
                 li {
                     z-index: 2;
-                    display: inline;
                     position: relative;
+                    display: inline;
                     &::before {
                         transition: ease all 0.2s;
                         content: "";
@@ -153,4 +171,9 @@ header {
 footer {
     display: flex;
     justify-content: space-between;
+    color: $white;
+    p,
+    a {
+        font-size: 1.6rem;
+    }
 }

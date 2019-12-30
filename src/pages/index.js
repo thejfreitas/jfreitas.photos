@@ -3,24 +3,17 @@ import { graphql } from "gatsby"
 import Layout from "../templates/layout-wrap"
 import MainNavigation from "../components/main-navigation"
 import SocialNavigation from "../components/social-navigation"
-import bg from "../img/gallery/saskatoon-bridge.jpg"
 
 export default ({ data }) => {
   return (
     <Layout>
-      <header className="headline-intro" style={{ backgroundImage: `url(${bg})` }}>
-        <div className=" headline-content">
-
+      <header className="headline-intro">
+        <div className="headline-content">
           <h1>{data.site.siteMetadata.headline}</h1>
           <p>{data.site.siteMetadata.greeting} {data.site.siteMetadata.name}</p>
           <p>{data.site.siteMetadata.description}</p>
-
-          <div className="social-navigation container">
-            <SocialNavigation externalSites={data.site.siteMetadata.externalSites} />
-          </div>
-          <div className="main-navigation container">
-            <MainNavigation externalSites={data.site.siteMetadata.externalSites} />
-          </div>
+          <SocialNavigation externalSites={data.site.siteMetadata.externalSites} />
+          <MainNavigation />
         </div>
       </header>
     </Layout >
