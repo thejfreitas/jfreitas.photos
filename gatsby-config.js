@@ -58,5 +58,19 @@ module.exports = {
         display: 'swap'
       }
     },
+
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `jfreitas.photos`,
+        short_name: `jfreitas.photos`,
+        start_url: `/`,
+        background_color: `#b45d88`,
+        theme_color: `#b45d88`,
+        display: `standalone`,
+        icon: `src/img/favicon/icon.png`,
+      },
+    },
+    `gatsby-plugin-offline`,
   ]
 }
