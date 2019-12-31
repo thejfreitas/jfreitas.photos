@@ -10,6 +10,8 @@ module.exports = {
     headline: `Freitas.eye`,
     greeting: `Hi! My name is`,
     name: `J. de Freitas`,
+    author: this.name,
+    title: `Photographer`,
     description: `This is my photography portifolio. Enjoy!`,
     externalSites: [
       {

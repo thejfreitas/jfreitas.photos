@@ -3,10 +3,12 @@ import { graphql } from "gatsby"
 import Layout from "../templates/layout-wrap"
 import MainNavigation from "../components/main-navigation"
 import SocialNavigation from "../components/social-navigation"
+import SEO from "../components/seo"
 
 export default ({ data }) => {
   return (
     <Layout>
+      <SEO title={data.site.siteMetadata.name} description={data.site.siteMetadata.description} />
       <header className="headline-intro">
         <div className="headline-content">
           <h1>{data.site.siteMetadata.headline}</h1>
