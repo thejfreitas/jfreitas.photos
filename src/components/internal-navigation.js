@@ -5,16 +5,16 @@ export default ({ siteMetadata }) => {
     return (
         <nav>
             <ul>
-                <Link to="/">
-                    <li className="headline">{siteMetadata.headline}</li>
-                </Link>
+                <li>
+                    <Link className="headline" to="/">{siteMetadata.headline}</Link>
+                </li>
             </ul>
             <ul className="social-links">
                 {siteMetadata.externalSites.map((site, i) => {
                     return (
-                        <a key={i} target="_blank" rel="noopener noreferrer" href={site.url}>
-                            <li>{site.name}</li>
-                        </a>
+                        <li>
+                            <a key={i} target="_blank" rel="noopener noreferrer" href={site.url}>{site.name}</a>
+                        </li>
                     );
                 })}
             </ul>

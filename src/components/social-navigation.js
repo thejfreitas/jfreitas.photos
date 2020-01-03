@@ -6,9 +6,9 @@ export default ({ externalSites }) => {
             <ul className="social-links">
                 {externalSites.map((site, i) => {
                     return (
-                        <a key={i} target="_blank" rel="noopener noreferrer" href={site.url}>
-                            <li>{site.name}</li>
-                        </a>
+                        <li>
+                            <a key={i} target="_blank" rel="noopener noreferrer" href={site.url}>{site.name}</a>
+                        </li>
                     );
                 })}
             </ul>

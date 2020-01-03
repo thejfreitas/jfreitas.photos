@@ -23,11 +23,9 @@ body {
             rgba(0, 0, 0, 0.8) 80%
         );
     }
-    @media (max-width: $breakpoint-lg) {
-        padding: 0 1.5rem;
-    }
+
     @media (max-width: $breakpoint-md) {
-        padding: 1.5rem;
+        padding: 0 1.5rem;
     }
 }
 
@@ -123,9 +121,9 @@ header {
         display: flex;
         align-items: center;
         justify-items: center;
-        height: 95vh;
-        @media (max-width: $breakpoint-sm) {
-            align-items: flex-start;
+        min-height: 95vh;
+        @media (max-width: $breakpoint-md) {
+            min-height: 90vh;
         }
     }
     &.internal-header {
@@ -149,17 +147,7 @@ header {
                     margin-top: 2rem;
                 }
             }
-            li {
-                display: inline;
-                a {
-                    &:not(:last-child) {
-                        margin-right: 3rem;
-                        @media (max-width: $breakpoint-sm) {
-                            margin-right: 1.5rem;
-                        }
-                    }
-                }
-            }
+
             .headline {
                 font-size: 4.8rem;
                 font-weight: bold;
@@ -196,37 +184,39 @@ header {
 }
 
 .social-links {
-    a {
-        &,
-        &:link,
-        &:visited {
-            transition: all 0.2s ease;
-            border-radius: 2rem;
-            font-weight: bold;
-            &:not(:last-child) {
-                margin-right: 3rem;
-                @media (max-width: $breakpoint-sm) {
-                    margin-right: 1.5rem;
-                }
-            }
-            li {
-                z-index: 2;
-                position: relative;
-                display: inline;
-                &::before {
-                    transition: ease all 0.2s;
-                    content: "";
-                    height: 0.4rem;
-                    bottom: 0.5rem;
-                    position: absolute;
-                    background: transparent;
-                    width: 0%;
-                    border-radius: 1rem;
-                }
+    li {
+        z-index: 2;
+        position: relative;
+        display: inline;
+
+        &:not(:last-child) {
+            margin-right: 3rem;
+            @media (max-width: $breakpoint-sm) {
+                margin-right: 1.5rem;
             }
         }
-        &:hover {
-            li {
+
+        a {
+            &,
+            &:link,
+            &:visited {
+                transition: all 0.2s ease;
+                border-radius: 2rem;
+                font-weight: bold;
+            }
+
+            &::before {
+                transition: ease all 0.2s;
+                content: "";
+                height: 0.4rem;
+                bottom: 0.5rem;
+                position: absolute;
+                background: transparent;
+                width: 0%;
+                border-radius: 1rem;
+            }
+
+            &:hover {
                 &::before {
                     width: 100%;
                     background: linear-gradient(
@@ -306,20 +296,23 @@ header {
 footer {
     display: flex;
     justify-content: space-between;
+    color: $white;
+    min-height: 5vh;
+    p,
+    a {
+        font-size: 1.6rem;
+    }
     @media (max-width: $breakpoint-lg) {
         justify-content: space-around;
     }
     @media (max-width: $breakpoint-md) {
         flex-direction: column-reverse;
         align-items: center;
+        margin-top: -2rem;
         p {
-            margin-bottom: 1.5rem;
+            &:not(:first-child) {
+                margin-bottom: 1.5rem;
+            }
         }
-    }
-    color: $white;
-    height: 5vh;
-    p,
-    a {
-        font-size: 1.6rem;
     }
 }
