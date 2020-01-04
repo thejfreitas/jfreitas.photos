@@ -12,8 +12,8 @@ export default ({ siteMetadata }) => {
             <ul className="social-links">
                 {siteMetadata.externalSites.map((site, i) => {
                     return (
-                        <li>
-                            <a key={i} target="_blank" rel="noopener noreferrer" href={site.url}>{site.name}</a>
+                        <li key={i}>
+                            <a target="_blank" rel="noopener noreferrer" href={site.url}>{site.name}</a>
                         </li>
                     );
                 })}
