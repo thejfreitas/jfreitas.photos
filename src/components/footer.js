@@ -1,7 +1,8 @@
 import React from "react"
 
 export default () => {
-    const year = `2019`;
+    const year = new Date().getFullYear();
+
     return (
         <footer className="container">
             <p>jfreitas.photos {year} &copy; All rights reserved</p>
