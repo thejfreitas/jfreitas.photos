@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../templates/layout-wrap"
 import Img from "gatsby-image"
 import InternalNavigation from "../components/internal-navigation"
+import SEO from "../components/seo"
 
 export default () => {
     const pageData = useStaticQuery(
@@ -32,6 +33,7 @@ export default () => {
 
     return (
         <Layout>
+            <SEO title="Portifolio" description={pageData.site.siteMetadata.description} />
             <header className="internal-header container">
                 <InternalNavigation siteMetadata={pageData.site.siteMetadata} />
             </header>
