@@ -60,7 +60,6 @@ module.exports = {
         display: 'swap'
       }
     },
-
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -74,5 +73,11 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-75050740-2",
+      },
+    },
   ]
 }
