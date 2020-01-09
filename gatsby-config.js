@@ -7,6 +7,7 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://jfreitas.photos`,
     headline: `Freitas.eye`,
     greeting: `Hi! My name is`,
     name: `J. de Freitas`,
@@ -73,6 +74,8 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
