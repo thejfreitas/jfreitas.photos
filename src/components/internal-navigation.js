@@ -6,7 +6,7 @@ export default ({ siteMetadata }) => {
         <nav>
             <ul>
                 <li>
-                    <Link className="headline" to="/">{siteMetadata.headline}</Link>
+                    <Link className="headline headline-font" to="/">{siteMetadata.headline}</Link>
                 </li>
             </ul>
             <ul className="social-links">

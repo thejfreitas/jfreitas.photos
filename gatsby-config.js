@@ -46,8 +46,8 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Give You Glory`,
-            variants: [`400`]
+            family: `Dancing Script`,
+            variants: [`400`, `700`]
           },
         ],
       },
@@ -56,7 +56,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Give You Glory:400`
+          `Dancing Script:400,700`
         ],
         display: 'swap'
       }

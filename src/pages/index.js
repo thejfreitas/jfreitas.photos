@@ -11,7 +11,7 @@ export default ({ data }) => {
       <SEO title={data.site.siteMetadata.name} description={data.site.siteMetadata.description} />
       <header className="headline-intro">
         <div className="headline-content">
-          <h1>{data.site.siteMetadata.headline}</h1>
+          <h1 className="headline-font">{data.site.siteMetadata.headline}</h1>
           <p>{data.site.siteMetadata.greeting} {data.site.siteMetadata.name}</p>
           <p>{data.site.siteMetadata.description}</p>
           <SocialNavigation externalSites={data.site.siteMetadata.externalSites} />
