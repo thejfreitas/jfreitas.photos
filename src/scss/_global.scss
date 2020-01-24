@@ -115,7 +115,7 @@ a {
         color: $white;
     }
     &:hover {
-        color: lighten($white, 10%);
+        color: darken($white, 10%);
         text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.7);
     }
 }
@@ -201,37 +201,6 @@ header {
             margin-right: 3rem;
             @media (max-width: $breakpoint-sm) {
                 margin-right: 1.5rem;
-            }
-        }
-
-        a {
-            &,
-            &:link,
-            &:visited {
-                transition: all 0.2s ease;
-                border-radius: 2rem;
-            }
-
-            &::before {
-                transition: ease all 0.2s;
-                content: "";
-                height: 0.4rem;
-                bottom: 0rem;
-                position: absolute;
-                background: transparent;
-                width: 0%;
-                border-radius: 1rem;
-            }
-
-            &:hover {
-                &::before {
-                    width: 100%;
-                    background: linear-gradient(
-                        150deg,
-                        rgba(255, 255, 255, 0.8) 20%,
-                        rgba(255, 0, 0, 1) 80%
-                    );
-                }
             }
         }
     }
