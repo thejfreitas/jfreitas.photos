@@ -9,8 +9,7 @@
         "develop": "gatsby develop",
         "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
         "start": "npm run develop",
-        "serve": "gatsby serve",
-        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+        "serve": "gatsby serve"
     },
     "dependencies": {
         "gatsby": "^2.18.17",
@@ -41,6 +40,6 @@
         "url": "https://github.com/juniormfreitas/jfreitas.photos"
     },
     "bugs": {
-        "url": "https://github.com/gatsbyjs/gatsby/issues"
+        "url": "https://github.com/juniormfreitas/jfreitas.photos/issues"
     }
 }

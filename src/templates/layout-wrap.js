@@ -4,10 +4,10 @@ import Footer from "../components/footer"
 
 export default ({ children }) => {
     return (
-        <div>
+        <React.Fragment>
             <Header />
             {children}
             <Footer />
-        </div>
+        </React.Fragment>
     )
 }
