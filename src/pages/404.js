@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../templates/layout-wrap"
 
-import InternalNavigation from "../components/internal-navigation"
+import Navigation from "../components/navigation"
 
 export default () => {
     const pageData = useStaticQuery(
@@ -24,7 +24,7 @@ export default () => {
     return (
         <Layout>
             <header className="internal-header container">
-                <InternalNavigation siteMetadata={pageData.site.siteMetadata} />
+                <Navigation siteMetadata={pageData.site.siteMetadata} />
             </header>
             <section className="container fallback-area">
                 <h1>404</h1>

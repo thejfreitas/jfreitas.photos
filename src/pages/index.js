@@ -1,40 +1,60 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import Layout from "../templates/layout-wrap"
-import MainNavigation from "../components/main-navigation"
-import SocialNavigation from "../components/social-navigation"
+import Navigation from "../components/navigation"
 import SEO from "../components/seo"
+import Img from "gatsby-image"
 
-export default ({ data }) => {
+export default () => {
+
+  const pageData = useStaticQuery(
+    graphql`
+        query Images {
+        gal : allFile {
+            nodes {
+                id
+                childImageSharp {
+                    fluid {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+        }
+        site {
+            siteMetadata {
+                headline
+                greeting
+                name
+                description
+                externalSites {
+                    name
+                    url
+                }
+            }
+        }    
+    }`
+  )
+
+  const site = pageData.site.siteMetadata;
+
   return (
     <Layout>
-      <SEO title={data.site.siteMetadata.name} description={data.site.siteMetadata.description} />
-      <header className="headline-intro">
-        <div className="headline-content">
-          <h1 className="headline-font">{data.site.siteMetadata.headline}</h1>
-          <p>{data.site.siteMetadata.greeting} {data.site.siteMetadata.name}</p>
-          <p>{data.site.siteMetadata.description}</p>
-          <SocialNavigation externalSites={data.site.siteMetadata.externalSites} />
-          <MainNavigation />
-        </div>
-      </header>
+      <SEO title={site.name} description={site.description} />
+      <section className="gallery-area">
+        <header className="headline">
+          <h1>
+            <Link to="/">{site.headline}</Link>
+          </h1>
+          <p>{site.greeting} {site.name}</p>
+          <p>{site.description}</p>
+          <Navigation externalSites={site.externalSites} />
+        </header>
+
+        {pageData.gal.nodes.map(image => (
+          <Img key={image.id} fluid={image.childImageSharp.fluid} />
+        ))}
+      </section>
     </Layout >
   )
 }
 
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        headline
-        greeting
-        name
-        description
-        externalSites {
-          name
-          url
-        }
-      }
-    }
-  }
-`

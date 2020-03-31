@@ -1,51 +1,13 @@
 html {
     font-size: 62.5%;
-    background: rgba(180, 93, 136, 1);
-    overflow: auto;
     scroll-behavior: smooth;
+    line-height: 1;
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
         "Segoe UI Symbol";
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    animation: bg-animation 60s ease 0.1s infinite;
-    background: rgba(180, 93, 136, 1);
-    &::before {
-        content: "";
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-image: linear-gradient(
-            150deg,
-            transparent 5%,
-            rgba(0, 0, 0, 0.8) 80%
-        );
-    }
-
-    @media (max-width: $breakpoint-md) {
-        padding: 0 1.5rem;
-    }
-}
-
-@keyframes bg-animation {
-    0% {
-        background-color: rgba(180, 93, 136, 1);
-    }
-    50% {
-        background-color: rgba(2, 84, 186, 1);
-    }
-    75% {
-        background-color: rgba(148, 136, 202, 1);
-    }
-    100% {
-        background-color: rgba(180, 93, 136, 1);
-    }
 }
 
 p,
@@ -56,11 +18,8 @@ ul,
 ul li,
 ol li,
 a {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     @media (max-width: $breakpoint-md) {
-        font-size: 1.6rem;
-    }
-    @media (max-width: $breakpoint-sm) {
         font-size: 1.4rem;
     }
 }
@@ -69,131 +28,52 @@ p {
     margin: 0;
 }
 
+ul {
+    padding-left: 0;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    margin-bottom: 3rem;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
     font-weight: bold;
-}
-
-h1 {
-    font-size: 10rem;
-    @media (max-width: $breakpoint-md) {
-        font-size: 8rem;
-    }
-    @media (max-width: $breakpoint-sm) {
-        font-size: 6rem;
-    }
-}
-h2 {
-    font-size: 6rem;
-    @media (max-width: $breakpoint-md) {
-        font-size: 4rem;
-    }
-    @media (max-width: $breakpoint-sm) {
-        font-size: 3rem;
-    }
-}
-h3 {
-    font-size: 4rem;
-}
-h4 {
-    font-size: 3rem;
-}
-h5 {
-    font-size: 2rem;
 }
 
 a {
     &,
     &:link,
     &:visited {
-        @include default-transition;
-        color: $white;
+        text-decoration: none;
     }
     &:hover {
-        color: darken($white, 10%);
-        text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.7);
     }
 }
 
 header {
-    &.headline-intro {
-        display: flex;
-        align-items: center;
-        justify-items: center;
-        min-height: 95vh;
-        @media (max-width: $breakpoint-md) {
-            min-height: 90vh;
-        }
-    }
-    &.internal-header {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        padding: 5rem 0 0 0;
-        @media (max-width: $breakpoint-md) {
-            padding: 2.5rem 0 0 0;
-        }
-
-        nav {
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            flex-direction: row;
-            align-items: center;
-            @media (max-width: $breakpoint-md) {
-                flex-direction: column;
-                .social-links {
-                    margin-top: 2rem;
-                }
-            }
-
-            .headline {
-                font-size: 4.8rem;
-                font-weight: bold;
-                @media (max-width: $breakpoint-sm) {
-                    font-size: 4rem;
-                }
-            }
-        }
-    }
-
-    .headline-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        z-index: 2;
-        color: $white;
-        text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
-    }
-}
-
-.headline-font {
-    font-family: "Dancing Script", cursive;
-}
-
-.main-navigation {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
     align-items: center;
-    margin-top: 3rem;
-}
-
-.social-navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 3rem;
+    justify-items: center;
+    padding: 2rem;
+    background-color: gray;
+    h1 {
+        font-family: "Dancing Script", cursive;
+        a {
+            font-size: 6rem;
+        }
+    }
+    nav {
+        font-weight: bold;
+    }
 }
 
 .social-links {
     li {
-        z-index: 2;
         position: relative;
         display: inline;
 
@@ -206,16 +86,23 @@ header {
     }
 }
 
+footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .gallery-area {
-    padding: 5rem 0;
+    padding: 0 1.5rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    grid-column-gap: 1.5rem;
-    grid-row-gap: 1.5rem;
+    grid-gap: 0.5rem;
     grid-auto-rows: auto;
     grid-auto-flow: dense;
-    --borderSize: 1rem;
-    --imgScale: 1.05;
+    --borderSize: 0.1rem;
+    --imgScale: 1.01;
+    img {
+        border-radius: 0.4rem;
+    }
     .gatsby-image-wrapper {
         @include default-transition;
         border: var(--borderSize) rgba($white, 0.8) solid;
@@ -234,7 +121,7 @@ header {
         }
         &:nth-child(6) {
             grid-column: span 2;
-            grid-row: span 4;
+            grid-row: span 2;
         }
     }
     @media (max-width: $breakpoint-md) {
@@ -258,36 +145,6 @@ header {
             &:nth-child(6) {
                 grid-row: unset;
                 grid-column: unset;
-            }
-        }
-    }
-}
-
-.fallback-area {
-    color: $white;
-    text-align: center;
-    padding: 10rem 0;
-}
-
-footer {
-    display: flex;
-    justify-content: space-between;
-    color: $white;
-    min-height: 5vh;
-    p,
-    a {
-        font-size: 1.4rem;
-    }
-    @media (max-width: $breakpoint-lg) {
-        justify-content: space-around;
-    }
-    @media (max-width: $breakpoint-md) {
-        flex-direction: column-reverse;
-        align-items: center;
-        margin-top: -2rem;
-        p {
-            &:not(:first-child) {
-                margin-bottom: 1.5rem;
             }
         }
     }

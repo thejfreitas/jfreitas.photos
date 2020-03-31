@@ -31,7 +31,6 @@
         "react-helmet": "^5.2.1"
     },
     "devDependencies": {
-        "bulma": "^0.7.5",
         "gatsby-plugin-google-fonts": "^1.0.1",
         "prettier": "^1.19.1"
     },
