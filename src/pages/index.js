@@ -45,8 +45,7 @@ export default () => {
           <h1>
             <Link to="/">{site.headline}</Link>
           </h1>
-          <p>{site.greeting} {site.name}</p>
-          <p>{site.description}</p>
+          <p>{site.greeting} {site.name}. {site.description}</p>
           <Navigation externalSites={site.externalSites} />
         </header>
 
