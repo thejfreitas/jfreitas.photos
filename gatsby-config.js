@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         name: `About Me`,
-        url: `https://juniorfreitas.net`,
+        url: `https://jfreitas.dev`,
       },
     ]
   },
