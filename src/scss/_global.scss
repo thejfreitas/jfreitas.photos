@@ -1,14 +1,16 @@
 html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-    line-height: 1;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  line-height: 1;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-        "Segoe UI Symbol";
-    background-color: $general-bg-colour;
+  margin: 0;
+  font-family: "Roboto Slab", serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: $general-bg-colour;
+  color: $white;
 }
 
 p,
@@ -19,18 +21,18 @@ ul,
 ul li,
 ol li,
 a {
-    font-size: 1.6rem;
-    @media (max-width: $breakpoint-md) {
-        font-size: 1.4rem;
-    }
+  font-size: 1.6rem;
+  @media (max-width: $breakpoint-md) {
+    font-size: 1.4rem;
+  }
 }
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 ul {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 h1,
@@ -39,111 +41,144 @@ h3,
 h4,
 h5,
 h6 {
-    margin-top: 0;
-    margin-bottom: 1.2rem;
-    font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font-weight: bold;
 }
 
 a {
-    &,
-    &:link,
-    &:visited {
-        text-decoration: none;
-    }
-    &:hover {
-    }
+  @include default-transition;
+  &,
+  &:link,
+  &:visited {
+    color: $white;
+    text-decoration: none;
+  }
+  &:hover {
+    color: $underexposed-colour;
+    text-decoration: underline;
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: 25rem 1fr;
+  grid-template-rows: 10rem 1fr;
+  align-items: center;
 }
 
 header {
-    display: grid;
-    grid-auto-flow: row;
-    grid-template-columns: 1fr;
-    align-items: center;
-    padding: 2rem;
-    background-color: $white;
-    h1 {
-        font-family: "Dancing Script", cursive;
-        a {
-            font-size: 6rem;
-        }
+  h1 {
+    a {
+      &,
+      &:link,
+      &:visited {
+        font-size: 4rem;
+        padding: 0 1.5rem;
+        color: $white;
+        text-decoration: none;
+      }
+      &:hover {
+        color: $white;
+        text-decoration: none;
+      }
     }
-    nav {
-        font-weight: bold;
-    }
+  }
+}
+
+nav {
+  justify-self: right;
+  padding: 0 1.5rem;
 }
 
 .social-links {
-    li {
-        display: inline;
-        &:not(:last-child) {
-            margin-right: 3rem;
-            @media (max-width: $breakpoint-sm) {
-                margin-right: 1.5rem;
-            }
-        }
+  li {
+    display: inline;
+    &:not(:last-child) {
+      margin-right: 3rem;
+      position: relative;
+      &::after {
+        content: "•";
+        color: $underexposed-colour;
+        position: absolute;
+        right: -1.7rem;
+        font-size: 1.8rem;
+      }
+      @media (max-width: $breakpoint-sm) {
+        margin-right: 1.5rem;
+      }
     }
+  }
+}
+
+.greeting {
+  align-self: start;
+  line-height: 2rem;
+  padding: 0 1.5rem;
+  color: $underexposed-colour;
 }
 
 footer {
-    padding: 2rem 1.5rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-content: center;
+  padding: 5rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-content: center;
+  background-color: $footer-bg-colour;
+  color: $underexposed-colour;
+  a {
+    &,
+    &:link,
+    &:visited {
+      color: $underexposed-colour;
+      text-decoration: none;
+    }
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
 }
 
 .gallery-area {
-    padding: 0 1.5rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    grid-gap: 0.5rem;
-    grid-auto-rows: auto;
-    grid-auto-flow: dense;
-    --borderSize: 0.1rem;
-    --imgScale: 1.01;
-    img {
-        border-radius: 0.4rem;
-    }
-    .gatsby-image-wrapper {
-        @include default-transition;
-        border: var(--borderSize) rgba($white, 0.8) solid;
-        backface-visibility: hidden;
-        z-index: 2;
-        overflow: inherit;
-        &:hover {
-            transform: scale(var(--imgScale));
-            border: var(--borderSize) rgba($white, 1) solid;
-        }
-        &:nth-child(4) {
-            grid-row: span 3;
-        }
-        &:nth-child(5) {
-            grid-row: span 2;
-        }
-        &:nth-child(6) {
-            grid-column: span 2;
-            grid-row: span 2;
-        }
-    }
-    @media (max-width: $breakpoint-md) {
-        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    }
-    @media (max-width: $breakpoint-sm) {
-        grid-template-columns: repeat(auto-fit, 1fr);
-        .gatsby-image-wrapper {
-            &:nth-child(1) {
-                grid-column: span 2;
-            }
-            &:nth-child(2) {
-                grid-column: span 2;
-            }
-            &:nth-child(4) {
-                grid-column: span 2;
-            }
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  grid-gap: 0.5rem;
+  grid-auto-rows: auto;
+  grid-auto-flow: dense;
+  --borderSize: 0.1rem;
+  --imgScale: 1.01;
 
-            &:nth-child(6) {
-                grid-row: unset;
-                grid-column: unset;
-            }
-        }
+  .gatsby-image-wrapper {
+    @include default-transition;
+
+    backface-visibility: hidden;
+    z-index: 2;
+    overflow: inherit;
+
+    &:nth-child(2) {
+      order: 5;
     }
+    &:nth-child(3) {
+      order: 4;
+    }
+    &:nth-child(4) {
+      grid-column: span 2;
+    }
+
+    &:nth-child(7) {
+      grid-column: span 3;
+    }
+    &:nth-child(9) {
+      order: 2;
+      grid-column: span 3;
+    }
+  }
+  @media (max-width: $breakpoint-md) {
+  }
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: repeat(auto-fit, 1fr);
+    .gatsby-image-wrapper {
+    }
+  }
 }

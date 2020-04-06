@@ -3,7 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   siteMetadata: {
@@ -27,7 +27,7 @@ module.exports = {
         name: `About Me`,
         url: `https://jfreitas.dev`,
       },
-    ]
+    ],
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -38,17 +38,15 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `gallery`,
-        path: path.join(__dirname, `src/img/gallery`)
-      }
+        path: path.join(__dirname, `src/img/gallery`),
+      },
     },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Dancing Script:400,700`
-        ],
-        display: 'swap'
-      }
+        fonts: [`Roboto Slab:400,700`],
+        display: "swap",
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -56,8 +54,8 @@ module.exports = {
         name: `jfreitas.photos`,
         short_name: `jfreitas.photos`,
         start_url: `/`,
-        background_color: `#b45d88`,
-        theme_color: `#b45d88`,
+        background_color: `#1a1a1a`,
+        theme_color: `#1a1a1a`,
         display: `standalone`,
         icon: `src/img/favicon/icon.png`,
       },
@@ -71,5 +69,5 @@ module.exports = {
         trackingId: "UA-75050740-2",
       },
     },
-  ]
-}
+  ],
+};
