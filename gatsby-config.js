@@ -13,7 +13,7 @@ module.exports = {
     name: `J. de Freitas`,
     author: this.name,
     title: `Photographer`,
-    description: `This is my photography portfolio that shows how I see the world with my eyes`,
+    description: `This is my photography portfolio that shows how I see the world with my eyes.`,
     externalSites: [
       {
         name: `Behance`,

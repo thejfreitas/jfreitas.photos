@@ -65,6 +65,10 @@ main {
   grid-template-columns: 25rem 1fr;
   grid-template-rows: 10rem 1fr;
   align-items: center;
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
 }
 
 header {
@@ -84,11 +88,18 @@ header {
       }
     }
   }
+  @media (max-width: $breakpoint-md) {
+    margin-top: 2rem;
+    justify-self: center;
+  }
 }
 
 nav {
   justify-self: right;
   padding: 0 1.5rem;
+  @media (max-width: $breakpoint-md) {
+    justify-self: center;
+  }
 }
 
 .social-links {
@@ -116,6 +127,10 @@ nav {
   line-height: 2rem;
   padding: 0 1.5rem;
   color: $underexposed-colour;
+  @media (max-width: $breakpoint-md) {
+    text-align: center;
+    margin: 2rem 5rem;
+  }
 }
 
 footer {
@@ -137,6 +152,19 @@ footer {
       text-decoration: underline;
     }
   }
+  .github-link {
+    justify-self: right;
+    @media (max-width: $breakpoint-md) {
+      justify-self: center;
+      margin-top: 2rem;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+  }
 }
 
 .gallery-area {
@@ -151,9 +179,7 @@ footer {
 
   .gatsby-image-wrapper {
     @include default-transition;
-
     backface-visibility: hidden;
-    z-index: 2;
     overflow: inherit;
 
     &:nth-child(2) {
@@ -174,11 +200,10 @@ footer {
       grid-column: span 3;
     }
   }
-  @media (max-width: $breakpoint-md) {
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   }
-  @media (max-width: $breakpoint-sm) {
-    grid-template-columns: repeat(auto-fit, 1fr);
-    .gatsby-image-wrapper {
-    }
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: auto;
   }
 }
