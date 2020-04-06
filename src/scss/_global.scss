@@ -69,6 +69,22 @@ main {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
+
+  &.four-zero-four {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: calc(100vh - 11.6rem);
+    text-align: center;
+    .back-top-home {
+      margin: 2rem 0;
+    }
+    h1 {
+      font-size: 5rem;
+    }
+    p {
+      margin-bottom: 2rem;
+    }
+  }
 }
 
 header {

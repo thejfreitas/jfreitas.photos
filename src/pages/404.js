@@ -1,35 +1,18 @@
-import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import Layout from "../templates/layout-wrap"
-
-import Navigation from "../components/navigation"
-
+import React from "react";
+import { Link } from "gatsby";
+import Layout from "../templates/layout-wrap";
 export default () => {
-    const pageData = useStaticQuery(
-        graphql`
-            query FourOFour {
-            
-            site {
-                siteMetadata {
-                    headline
-                    externalSites {
-                        name
-                        url
-                    }
-                }
-            }    
-        }`
-    )
-
-    return (
-        <Layout>
-            <header className="internal-header container">
-                <Navigation siteMetadata={pageData.site.siteMetadata} />
-            </header>
-            <section className="container fallback-area">
-                <h1>404</h1>
-                <h2>Ops! This page is broken or does not exist anymore.</h2>
-            </section>
-        </Layout >
-    )
-}
+  return (
+    <Layout>
+      <main className="four-zero-four">
+        <section className="container fallback-area">
+          <h1>404 - Page not found</h1>
+          <p>Ops! This page is broken or does not exist anymore.</p>
+          <Link className="back-top-home" to="/">
+            Back to the homepage
+          </Link>
+        </section>
+      </main>
+    </Layout>
+  );
+};
