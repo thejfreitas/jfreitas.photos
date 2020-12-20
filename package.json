@@ -12,15 +12,15 @@
         "serve": "gatsby serve"
     },
     "dependencies": {
-        "gatsby": "^2.20.10",
+        "gatsby": "^2.29.1",
         "gatsby-image": "^2.2.37",
         "gatsby-plugin-google-analytics": "^2.1.31",
         "gatsby-plugin-manifest": "^2.3.3",
         "gatsby-plugin-offline": "^3.0.30",
         "gatsby-plugin-react-helmet": "^3.1.18",
-        "gatsby-plugin-robots-txt": "^1.5.0",
+        "gatsby-plugin-robots-txt": "^1.5.3",
         "gatsby-plugin-sass": "^2.1.26",
-        "gatsby-plugin-sharp": "^2.5.3",
+        "gatsby-plugin-sharp": "^2.11.1",
         "gatsby-plugin-sitemap": "^2.2.24",
         "gatsby-source-filesystem": "^2.1.43",
         "gatsby-transformer-sharp": "^2.4.3",
