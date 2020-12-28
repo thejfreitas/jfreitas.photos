@@ -1,7 +1,7 @@
 {
     "name": "jfreitas.photos",
     "private": true,
-    "description": "My photography portifolio",
+    "description": "My photography portfolio",
     "version": "0.1.0",
     "license": "MIT",
     "scripts": {
