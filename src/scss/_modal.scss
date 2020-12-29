@@ -31,6 +31,10 @@
     width: 100vw;
     transform: translateY(-50%);
 
+    &--image-wrapper {
+      max-height: 100vh !important;
+    }
+
     &--close {
       @include default-transition;
       box-shadow: 0.1rem 0.1rem 0.1rem rgba($general-bg-colour, 0.5);

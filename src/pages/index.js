@@ -4,9 +4,7 @@ import Layout from '../templates/layout-wrap';
 import Navigation from '../components/Navigation';
 import SEO from '../components/Seo';
 import Img from 'gatsby-image';
-import Modal from 'react-modal';
-
-Modal.setAppElement('#___gatsby');
+import ModalGallery from "../components/ModalGallery"
 
 export default () => {
   const pageData = useStaticQuery(
@@ -39,14 +37,14 @@ export default () => {
   );
 
   const [isModalOpen, setModalOpen] = useState(false);
-  const [modalElement, setModalElement] = useState(false);
+  const [modalInnerElement, setModalInnerElement] = useState(false);
 
   const handleOpenModal = image => {
     setModalOpen(true);
-    setModalElement(
+    setModalInnerElement(
       <Img
+        className="ReactModal__Content--image-wrapper"
         fluid={image.childImageSharp.fluid}
-        style={{ maxHeight: 'calc(100vh)' }}
         imgStyle={{ objectFit: 'contain' }}
       />
     );
@@ -86,20 +84,7 @@ export default () => {
             </div>
           ))}
 
-          <Modal
-            isOpen={isModalOpen}
-            contentLabel="onRequestClose Example"
-            onRequestClose={handleCloseModal}
-            closeTimeoutMS={200}
-          >
-            {modalElement}
-            <button
-              className="ReactModal__Content--close"
-              onClick={() => handleCloseModal()}
-            >
-              Close
-            </button>
-          </Modal>
+          <ModalGallery isModalOpen={isModalOpen} modalInnerElement={modalInnerElement} handleCloseModal={handleCloseModal} />
         </section>
       </main>
     </Layout>
