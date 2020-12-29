@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "gatsby";
-import Layout from "../templates/layout-wrap";
+import React from 'react';
+import { Link } from 'gatsby';
+import Layout from '../templates/layout-wrap';
 export default () => {
   return (
     <Layout>

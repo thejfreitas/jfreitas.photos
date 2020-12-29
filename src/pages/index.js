@@ -1,9 +1,12 @@
-import React from "react";
-import { graphql, useStaticQuery, Link } from "gatsby";
-import Layout from "../templates/layout-wrap";
-import Navigation from "../components/navigation";
-import SEO from "../components/seo";
-import Img from "gatsby-image";
+import React, {useState} from 'react';
+import { graphql, useStaticQuery, Link } from 'gatsby';
+import Layout from '../templates/layout-wrap';
+import Navigation from '../components/Navigation';
+import SEO from '../components/Seo';
+import Img from 'gatsby-image';
+import Modal from 'react-modal';
+
+Modal.setAppElement('#___gatsby');
 
 export default () => {
   const pageData = useStaticQuery(
@@ -35,6 +38,19 @@ export default () => {
     `
   );
 
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [modalElement, setModalElement] = useState(false);
+
+  const handleOpenModal = (image) => {
+    // console.log(image)
+    setModalOpen(true);
+    setModalElement(<Img key={image.id} fluid={image.childImageSharp.fluid} />)
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  }
+
   const site = pageData.site.siteMetadata;
 
   return (
@@ -54,9 +70,17 @@ export default () => {
         </p>
 
         <section className="gallery-area">
-          {pageData.gal.nodes.map((image) => (
-            <Img key={image.id} fluid={image.childImageSharp.fluid} />
+          {pageData.gal.nodes.map(image => (
+              <div key={image.id} onClick={() => handleOpenModal(image)}>
+                <Img key={image.id} fluid={image.childImageSharp.fluid} />
+              </div>
           ))}
+
+          <Modal isOpen={isModalOpen} contentLabel="onRequestClose Example" onRequestClose={handleCloseModal}>
+            {/* <p onClick={() => handleCloseModal()}>Close</p> */}
+            {modalElement}
+            
+          </Modal>
         </section>
       </main>
     </Layout>
