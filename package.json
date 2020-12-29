@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "gatsby-plugin-google-fonts": "^1.0.1",
-    "prettier": "^1.19.1"
+    "prettier": "1.19.1"
   },
   "repository": {
     "type": "git",
