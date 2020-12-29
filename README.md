@@ -1,6 +1,6 @@
 # jfreitas.photos
 
-This is my photography portifolio built in [GatsbyJs](https://www.gatsbyjs.org/) which is a open source framework based on [React](https://reactjs.org/)
+This is my photography portfolio built in [GatsbyJs](https://www.gatsbyjs.org/) which is a open source framework based on [React](https://reactjs.org/)
 
 For web design I am using CSS Grid and [SASS](https://sass-lang.com/) as CSS preprocessor.
 
