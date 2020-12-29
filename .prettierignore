@@ -1,0 +1,7 @@
+public/
+.cache/
+.netlify/
+.vscode/
+package-lock.json
+package.json
+
