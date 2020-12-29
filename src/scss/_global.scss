@@ -193,29 +193,35 @@ footer {
   --borderSize: 0.1rem;
   --imgScale: 1.01;
 
-  .gatsby-image-wrapper {
-    @include default-transition;
-    backface-visibility: hidden;
-    overflow: inherit;
-
-    &:nth-child(2) {
-      order: 5;
-    }
-    &:nth-child(3) {
-      order: 4;
-    }
-    &:nth-child(4) {
-      grid-column: span 2;
-    }
-
-    &:nth-child(7) {
-      grid-column: span 3;
-    }
-    &:nth-child(9) {
-      order: 2;
-      grid-column: span 3;
+  div {
+    display: grid;
+    cursor: pointer;
+    height: 100%;
+    .gatsby-image-wrapper {
+      @include default-transition;
+      backface-visibility: hidden;
+      overflow: inherit;
+  
+      &:nth-child(2) {
+        order: 5;
+      }
+      &:nth-child(3) {
+        order: 4;
+      }
+      &:nth-child(4) {
+        grid-column: span 2;
+      }
+  
+      &:nth-child(7) {
+        grid-column: span 3;
+      }
+      &:nth-child(9) {
+        order: 2;
+        grid-column: span 3;
+      }
     }
   }
+  
   @media (max-width: $breakpoint-lg) {
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   }

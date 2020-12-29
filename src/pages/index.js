@@ -71,15 +71,13 @@ export default () => {
 
         <section className="gallery-area">
           {pageData.gal.nodes.map(image => (
-              <div key={image.id} onClick={() => handleOpenModal(image)}>
+              <div key={image.id} onClick={() => handleOpenModal(image)} onKeyPress={() => handleOpenModal(image)} role="presentation">
                 <Img key={image.id} fluid={image.childImageSharp.fluid} />
               </div>
           ))}
 
           <Modal isOpen={isModalOpen} contentLabel="onRequestClose Example" onRequestClose={handleCloseModal}>
-            {/* <p onClick={() => handleCloseModal()}>Close</p> */}
             {modalElement}
-            
           </Modal>
         </section>
       </main>
