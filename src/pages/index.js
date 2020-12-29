@@ -4,7 +4,7 @@ import Layout from '../templates/layout-wrap';
 import Navigation from '../components/Navigation';
 import SEO from '../components/Seo';
 import Img from 'gatsby-image';
-import ModalGallery from "../components/ModalGallery"
+import ModalGallery from '../components/ModalGallery';
 
 export default () => {
   const pageData = useStaticQuery(
@@ -84,7 +84,11 @@ export default () => {
             </div>
           ))}
 
-          <ModalGallery isModalOpen={isModalOpen} modalInnerElement={modalInnerElement} handleCloseModal={handleCloseModal} />
+          <ModalGallery
+            isModalOpen={isModalOpen}
+            modalInnerElement={modalInnerElement}
+            handleCloseModal={handleCloseModal}
+          />
         </section>
       </main>
     </Layout>
