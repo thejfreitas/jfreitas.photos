@@ -6,9 +6,9 @@ html {
 
 body {
   margin: 0;
-  font-family: "Roboto Slab", serif, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'Roboto Slab', serif, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol';
   background-color: $general-bg-colour;
   color: $white;
 }
@@ -125,7 +125,7 @@ nav {
       margin-right: 3rem;
       position: relative;
       &::after {
-        content: "•";
+        content: '•';
         color: $underexposed-colour;
         position: absolute;
         right: -1.7rem;
@@ -201,7 +201,7 @@ footer {
       @include default-transition;
       backface-visibility: hidden;
       overflow: inherit;
-  
+
       &:nth-child(2) {
         order: 5;
       }
@@ -211,7 +211,7 @@ footer {
       &:nth-child(4) {
         grid-column: span 2;
       }
-  
+
       &:nth-child(7) {
         grid-column: span 3;
       }
@@ -221,7 +221,7 @@ footer {
       }
     }
   }
-  
+
   @media (max-width: $breakpoint-lg) {
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   }

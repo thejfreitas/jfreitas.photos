@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 import Layout from '../templates/layout-wrap';
 import Navigation from '../components/Navigation';
@@ -41,20 +41,20 @@ export default () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [modalElement, setModalElement] = useState(false);
 
-  const handleOpenModal = (image) => {
+  const handleOpenModal = image => {
     setModalOpen(true);
     setModalElement(
-      <Img 
-        fluid={image.childImageSharp.fluid} 
+      <Img
+        fluid={image.childImageSharp.fluid}
         style={{ maxHeight: 'calc(100vh)' }}
-        imgStyle={{ objectFit: 'contain' }} 
+        imgStyle={{ objectFit: 'contain' }}
       />
-    )
+    );
   };
 
   const handleCloseModal = () => {
     setModalOpen(false);
-  }
+  };
 
   const site = pageData.site.siteMetadata;
 
@@ -76,14 +76,29 @@ export default () => {
 
         <section className="gallery-area">
           {pageData.gal.nodes.map(image => (
-              <div key={image.id} onClick={() => handleOpenModal(image)} onKeyPress={() => handleOpenModal(image)} role="presentation">
-                <Img fluid={image.childImageSharp.fluid} />
-              </div>
+            <div
+              key={image.id}
+              onClick={() => handleOpenModal(image)}
+              onKeyPress={() => handleOpenModal(image)}
+              role="presentation"
+            >
+              <Img fluid={image.childImageSharp.fluid} />
+            </div>
           ))}
 
-          <Modal isOpen={isModalOpen} contentLabel="onRequestClose Example" onRequestClose={handleCloseModal} closeTimeoutMS={200}>
+          <Modal
+            isOpen={isModalOpen}
+            contentLabel="onRequestClose Example"
+            onRequestClose={handleCloseModal}
+            closeTimeoutMS={200}
+          >
             {modalElement}
-            <button className="ReactModal__Content--close" onClick={() => handleCloseModal()}>Close</button>
+            <button
+              className="ReactModal__Content--close"
+              onClick={() => handleCloseModal()}
+            >
+              Close
+            </button>
           </Modal>
         </section>
       </main>
