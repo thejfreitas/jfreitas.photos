@@ -1,9 +1,11 @@
-import React from "react"
-import { Helmet } from "react-helmet"
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
-export default () => (
-    <Helmet>
-        <html lang="en" />
-        <meta charSet="utf-8" />
-    </Helmet>
-)
+const Header = () => (
+  <Helmet>
+    <html lang="en" />
+    <meta charSet="utf-8" />
+  </Helmet>
+);
+
+export default Header;

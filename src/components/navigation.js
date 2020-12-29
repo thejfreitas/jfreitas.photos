@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-export default ({ externalSites }) => {
+const Navigation = ({ externalSites }) => {
   return (
     <nav>
       <ul className="social-links">
@@ -17,3 +17,5 @@ export default ({ externalSites }) => {
     </nav>
   );
 };
+
+export default Navigation;
