@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 
 Modal.setAppElement('#___gatsby');
 
-const ModalGallery = ({ isModalOpen, modalInnerElement, handleCloseModal }) => {
+export default function ModalGallery({ isModalOpen, modalInnerElement, handleCloseModal }) {
   return (
     <Modal
       isOpen={isModalOpen}
@@ -20,5 +20,3 @@ const ModalGallery = ({ isModalOpen, modalInnerElement, handleCloseModal }) => {
     </Modal>
   );
 };
-
-export default ModalGallery;

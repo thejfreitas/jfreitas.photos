@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Layout from '../templates/layout-wrap';
-export default () => {
+
+export default function Page404() {
   return (
     <Layout>
       <main className="four-zero-four">

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
+import Img from 'gatsby-image';
+
 import Layout from '../templates/layout-wrap';
 import Navigation from '../components/Navigation';
 import SEO from '../components/Seo';
-import Img from 'gatsby-image';
 import ModalGallery from '../components/ModalGallery';
 
-export default () => {
+const Index = () => {
   const pageData = useStaticQuery(
     graphql`
       query Images {
@@ -94,3 +95,5 @@ export default () => {
     </Layout>
   );
 };
+
+export default Index;
