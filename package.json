@@ -12,7 +12,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "gatsby": "^3.1.2",
+    "gatsby": "^3.2.1",
     "gatsby-image": "^3.1.0",
     "gatsby-plugin-google-analytics": "^3.1.0",
     "gatsby-plugin-manifest": "^3.1.0",
