@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 
 import Layout from '../templates/layout-wrap';
 import Navigation from '../components/Navigation';
-import SEO from '../components/Seo';
+import Seo from '../components/Seo';
 import ModalGallery from '../components/ModalGallery';
 
 const Index = () => {
@@ -59,7 +59,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <SEO title={site.name} description={site.description} />
+      <Seo title={site.name} description={site.description} />
       <main>
         <header className="headline">
           <h1>
