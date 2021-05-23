@@ -7,6 +7,8 @@ import Navigation from '../components/Navigation';
 import Seo from '../components/Seo';
 import ModalGallery from '../components/ModalGallery';
 
+import { extractFileNameFromSrc } from '../utils';
+
 const Index = () => {
   const siteDataAndImagesQuery = useStaticQuery(
     graphql`
@@ -44,8 +46,8 @@ const Index = () => {
       <GatsbyImage
         className="ReactModal__Content--image-wrapper"
         image={image.childImageSharp.gatsbyImageData}
-        alt="image"
         imgStyle={{ objectFit: 'contain' }}
+        alt={extractFileNameFromSrc(image.childImageSharp.gatsbyImageData.images.fallback.src)}
       />
     );
   };
@@ -82,7 +84,10 @@ const Index = () => {
               onKeyPress={() => handleOpenModal(image)}
               role="presentation"
             >
-              <GatsbyImage image={image.childImageSharp.gatsbyImageData} alt="image" />
+              <GatsbyImage
+                image={image.childImageSharp.gatsbyImageData}
+                alt={extractFileNameFromSrc(image.childImageSharp.gatsbyImageData.images.fallback.src)}
+              />
             </div>
           ))}
 
