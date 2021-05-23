@@ -1,11 +1,10 @@
 import React from 'react';
+import { getFullCurrentYear } from '../utils'
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="container">
-      <p>jfreitas.photos {year} &copy; All rights reserved</p>
+      <p>jfreitas.photos {getFullCurrentYear()} &copy; All rights reserved</p>
       <p className="github-link">
         <a href="https://github.com/juniormfreitas/jfreitas.photos">
           How I built this website.
