@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
-import Img from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import Layout from '../templates/layout-wrap';
 import Navigation from '../components/Navigation';
@@ -8,19 +8,9 @@ import Seo from '../components/Seo';
 import ModalGallery from '../components/ModalGallery';
 
 const Index = () => {
-  const pageData = useStaticQuery(
+  const siteDataAndImagesQuery = useStaticQuery(
     graphql`
-      query Images {
-        gal: allFile {
-          nodes {
-            id
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-        }
+      query PageData {
         site {
           siteMetadata {
             headline
@@ -30,6 +20,14 @@ const Index = () => {
             externalSites {
               name
               url
+            }
+          }
+        }
+        allFile {
+          nodes {
+            id
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH) 
             }
           }
         }
@@ -43,9 +41,10 @@ const Index = () => {
   const handleOpenModal = image => {
     setModalOpen(true);
     setModalInnerElement(
-      <Img
+      <GatsbyImage
         className="ReactModal__Content--image-wrapper"
-        fluid={image.childImageSharp.fluid}
+        image={image.childImageSharp.gatsbyImageData}
+        alt="image"
         imgStyle={{ objectFit: 'contain' }}
       />
     );
@@ -55,33 +54,35 @@ const Index = () => {
     setModalOpen(false);
   };
 
-  const site = pageData.site.siteMetadata;
+  const { name, description, headline, externalSites, greeting } = siteDataAndImagesQuery.site.siteMetadata;
+  const gallery = siteDataAndImagesQuery.allFile.nodes;
 
   return (
     <Layout>
-      <Seo title={site.name} description={site.description} />
+      <Seo title={name} description={description} />
       <main>
         <header className="headline">
           <h1>
-            <Link to="/">{site.headline}</Link>
+            <Link to="/">{headline}</Link>
           </h1>
         </header>
 
-        <Navigation externalSites={site.externalSites} />
+        <Navigation externalSites={externalSites} />
 
         <p className="greeting">
-          {site.greeting} {site.name}. {site.description}
+          {greeting} {name}. {description}
         </p>
 
         <section className="gallery-area">
-          {pageData.gal.nodes.map(image => (
+
+          {gallery.map(image => (
             <div
               key={image.id}
               onClick={() => handleOpenModal(image)}
               onKeyPress={() => handleOpenModal(image)}
               role="presentation"
             >
-              <Img fluid={image.childImageSharp.fluid} />
+              <GatsbyImage image={image.childImageSharp.gatsbyImageData} alt="image" />
             </div>
           ))}
 
