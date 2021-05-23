@@ -195,6 +195,7 @@ footer {
         display: grid;
         cursor: pointer;
         height: 100%;
+        overflow: hidden;
         .gatsby-image-wrapper {
             @include default-transition;
             backface-visibility: hidden;
