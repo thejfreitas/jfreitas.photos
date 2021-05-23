@@ -8,6 +8,7 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://jfreitas.photos',
+    siteAddress: 'jfreitas.photos',
     headline: 'Freitas.eye',
     greeting: 'Hi! My name is',
     name: 'J. de Freitas',
@@ -29,6 +30,7 @@ module.exports = {
         url: 'https://jfreitas.dev',
       },
     ],
+    repository: 'https://github.com/juniormfreitas/jfreitas.photos',
   },
   plugins: [
     {
