@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
-import Img from 'gatsby-image';
+import Img from 'gatsby-plugin-image';
 
 import Layout from '../templates/layout-wrap';
 import Navigation from '../components/Navigation';
