@@ -11,7 +11,7 @@ You might need to [set up your environment](https://www.gatsbyjs.org/tutorial/pa
 After you clone this repository run the following command:
 
 ```
-npm install
+yarn
 ```
 
 and then
