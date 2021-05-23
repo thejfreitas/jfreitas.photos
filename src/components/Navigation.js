@@ -4,11 +4,13 @@ export default function Navigation({ externalSites }) {
   return (
     <nav>
       <ul className="social-links">
-        {externalSites.map((site, i) => {
+        {externalSites.map((site, index) => {
+          const { name, url } = site;
+
           return (
-            <li key={i}>
-              <a target="_blank" rel="noopener noreferrer" href={site.url}>
-                {site.name}
+            <li key={index}>
+              <a target="_blank" rel="noopener noreferrer" href={url}>
+                {name}
               </a>
             </li>
           );
