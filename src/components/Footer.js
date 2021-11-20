@@ -22,8 +22,8 @@ export default function Footer() {
     <footer className="container">
       <p>{siteAddress} {getFullCurrentYear()} &copy; All rights reserved</p>
       <p className="github-link">
-        <a href="https://github.com/juniormfreitas/jfreitas.photos">
-          {repository}
+        <a href={repository}>
+          How I built this website
         </a>
       </p>
     </footer>
