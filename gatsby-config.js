@@ -30,7 +30,7 @@ module.exports = {
         url: 'https://jfreitas.dev',
       },
     ],
-    repository: 'https://github.com/juniormfreitas/jfreitas.photos',
+    repository: 'https://github.com/thejfreitas/jfreitas.photos',
   },
   plugins: [
     {
