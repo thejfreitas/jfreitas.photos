@@ -8,7 +8,15 @@ Before you start you must have Gatsby CLI installed in your computer.
 
 You might need to [set up your environment](https://www.gatsbyjs.org/tutorial/part-zero/) first in order to install [the Gatsby CLI](https://www.gatsbyjs.org/tutorial/part-zero/#using-the-gatsby-cli)
 
-After you clone this repository run the following command:
+## Requirements
+
+### [NodeJs](https://nodejs.org/en/)
+
+`Expected version: >=14.15.0`
+
+### [Yarn](https://yarnpkg.com/)
+
+After you clone this repository you must run the following command in order to install the dependency packages:
 
 ```
 yarn
