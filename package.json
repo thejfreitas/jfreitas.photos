@@ -29,7 +29,7 @@
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-modal": "^3.14.4",
-    "sass": "^1.47.0"
+    "sass": "^1.49.0"
   },
   "devDependencies": {
     "gatsby-plugin-google-fonts": "^1.0.1",
