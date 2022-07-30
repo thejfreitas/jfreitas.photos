@@ -14,12 +14,11 @@ module.exports = {
     name: 'J. de Freitas',
     author: this.name,
     title: 'Photographer',
-    description:
-      'This is my photography portfolio that shows how I see the world with my eyes.',
+    description: 'This is how I see the world with my eyes.',
     externalSites: [
       {
         name: 'Behance',
-        url: 'https://www.behance.net/freitaseye',
+        url: 'https://www.behance.net/thejfreitas',
       },
       {
         name: 'Instagram',
@@ -73,15 +72,14 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
     {
-      resolve: "gatsby-plugin-google-gtag",
+      resolve: 'gatsby-plugin-google-gtag',
       options: {
-        trackingIds: [
-          "UA-75050740-2",
-        ],
+        trackingIds: ['UA-75050740-2'],
         pluginConfig: {
           head: false,
         },
       },
     },
+    'gatsby-plugin-dark-mode',
   ],
 };

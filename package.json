@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-dark-mode": "^1.1.2",
     "prettier": "^2.7.1"
   },
   "repository": {
