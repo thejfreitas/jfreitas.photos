@@ -1,11 +1,12 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Link } from 'gatsby';
 
-export default function Header() {
+export default function Header({ headline }) {
   return (
-    <Helmet>
-      <html lang="en" />
-      <meta charSet="utf-8" />
-    </Helmet>
+    <header className="headline">
+      <h1>
+        <Link to="/">{headline}</Link>
+      </h1>
+    </header>
   );
 }

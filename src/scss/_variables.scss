@@ -1,5 +1,5 @@
-$header-colour: rgba(33, 33, 33, 1);
-$text-colour: rgba(97, 97, 97, 1);
+$header-color: rgba(33, 33, 33, 1);
+$text-color: rgba(97, 97, 97, 1);
 
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
@@ -8,6 +8,14 @@ $breakpoint-xl: 1200px;
 
 $white: #ffffff;
 
-$general-bg-colour: #1a1a1a;
-$footer-bg-colour: #262626;
-$underexposed-colour: #686868;
+$general-bg-color:  $white;
+$footer-bg-color: darken($white, 5%);
+$underexposed-color: #686868;
+$underexposed-color-hover: darken($underexposed-color, 20%);
+
+$general-bg-color-dark: #1a1a1a;
+$footer-bg-color-dark: #262626;
+$header-color-dark: $white;
+$underexposed-color-dark: darken($white, 20%);
+$underexposed-color-hover-dark: lighten($underexposed-color-dark, 20%);
+

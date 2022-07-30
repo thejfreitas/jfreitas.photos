@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 import Layout from '../templates/layout-wrap';
 import Navigation from '../components/Navigation';
 import Seo from '../components/Seo';
+import Header from '../components/Header';
 import ModalGallery from '../components/ModalGallery';
 
 import { extractFileNameFromSrc } from '../utils';
@@ -29,7 +30,7 @@ const Index = () => {
           nodes {
             id
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH) 
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
         }
@@ -40,14 +41,16 @@ const Index = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [modalInnerElement, setModalInnerElement] = useState(false);
 
-  const handleOpenModal = image => {
+  const handleOpenModal = (image) => {
     setModalOpen(true);
     setModalInnerElement(
       <GatsbyImage
         className="ReactModal__Content--image-wrapper"
         image={image.childImageSharp.gatsbyImageData}
         imgStyle={{ objectFit: 'contain' }}
-        alt={extractFileNameFromSrc(image.childImageSharp.gatsbyImageData.images.fallback.src)}
+        alt={extractFileNameFromSrc(
+          image.childImageSharp.gatsbyImageData.images.fallback.src
+        )}
       />
     );
   };
@@ -56,18 +59,15 @@ const Index = () => {
     setModalOpen(false);
   };
 
-  const { name, description, headline, externalSites, greeting } = siteDataAndImagesQuery.site.siteMetadata;
+  const { name, description, headline, externalSites, greeting } =
+    siteDataAndImagesQuery.site.siteMetadata;
   const gallery = siteDataAndImagesQuery.allFile.nodes;
 
   return (
     <Layout>
       <Seo title={name} description={description} />
       <main>
-        <header className="headline">
-          <h1>
-            <Link to="/">{headline}</Link>
-          </h1>
-        </header>
+        <Header headline={headline} />
 
         <Navigation externalSites={externalSites} />
 
@@ -76,8 +76,7 @@ const Index = () => {
         </p>
 
         <section className="gallery-area">
-
-          {gallery.map(image => (
+          {gallery.map((image) => (
             <div
               key={image.id}
               onClick={() => handleOpenModal(image)}
@@ -86,7 +85,9 @@ const Index = () => {
             >
               <GatsbyImage
                 image={image.childImageSharp.gatsbyImageData}
-                alt={extractFileNameFromSrc(image.childImageSharp.gatsbyImageData.images.fallback.src)}
+                alt={extractFileNameFromSrc(
+                  image.childImageSharp.gatsbyImageData.images.fallback.src
+                )}
               />
             </div>
           ))}

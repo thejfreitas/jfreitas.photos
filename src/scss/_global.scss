@@ -1,3 +1,12 @@
+:root {
+    --background-color: #{$general-bg-color};
+    --footer-background-color: #{$footer-bg-color};
+    --header-color: #{$header-color};
+    --text-color: #{$text-color};
+    --link-color: #{$underexposed-color};
+    --link-color-hover: #{$underexposed-color-hover};
+}
+
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
@@ -5,12 +14,36 @@ html {
 }
 
 body {
+    @include default-transition;
     margin: 0;
     font-family: 'Roboto Slab', serif, -apple-system, BlinkMacSystemFont,
         'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
         'Segoe UI Emoji', 'Segoe UI Symbol';
-    background-color: $general-bg-colour;
-    color: $white;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+body.dark {
+    --background-color: #{$general-bg-color-dark};
+    --footer-background-color: #{$footer-bg-color-dark};
+    --header-color: #{$header-color-dark};
+    --link-color: #{$underexposed-color-dark};
+    --link-color-hover: #{$underexposed-color-hover-dark};
+}
+
+.theme-toggle {
+    font-size: 1.4rem;
+    background-color: white;
+    border-radius: 1.5rem;
+    margin: auto 1.5rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+
+    &-switch {
+        display: none;
+    }
 }
 
 p,
@@ -43,7 +76,7 @@ h5,
 h6 {
     margin-top: 0;
     margin-bottom: 1.2rem;
-    font-weight: bold;
+    font-weight: bold;  
 }
 
 a {
@@ -51,11 +84,11 @@ a {
     &,
     &:link,
     &:visited {
-        color: $white;
+        color: var(--link-color);
         text-decoration: none;
     }
     &:hover {
-        color: $underexposed-colour;
+        color: var(--link-color-hover);
         text-decoration: underline;
     }
 }
@@ -95,12 +128,11 @@ header {
             &:visited {
                 font-size: 4rem;
                 padding: 0 1.5rem;
-                color: $white;
+                color: var(--header-color);
                 text-decoration: none;
             }
             &:hover {
-                color: $white;
-                text-decoration: none;
+                color: var(--link-color-hover);
             }
         }
     }
@@ -111,11 +143,16 @@ header {
 }
 
 nav {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
     justify-self: right;
     padding: 0 1.5rem;
     @media (max-width: $breakpoint-md) {
         justify-self: center;
+        grid-template-columns: auto;
     }
+    
 }
 
 .social-links {
@@ -126,13 +163,15 @@ nav {
             position: relative;
             &::after {
                 content: '•';
-                color: $underexposed-colour;
                 position: absolute;
                 right: -1.7rem;
                 font-size: 1.8rem;
             }
             @media (max-width: $breakpoint-sm) {
                 margin-right: 1.5rem;
+                &::after {
+                    content: none;
+                }
             }
         }
     }
@@ -142,7 +181,6 @@ nav {
     align-self: start;
     line-height: 2rem;
     padding: 0 1.5rem;
-    color: $underexposed-colour;
     @media (max-width: $breakpoint-md) {
         text-align: center;
         margin: 2rem 5rem;
@@ -154,20 +192,8 @@ footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-content: center;
-    background-color: $footer-bg-colour;
-    color: $underexposed-colour;
-    a {
-        &,
-        &:link,
-        &:visited {
-            color: $underexposed-colour;
-            text-decoration: none;
-        }
-        &:hover {
-            color: $white;
-            text-decoration: underline;
-        }
-    }
+    background-color: var(--footer-background-color);
+
     .github-link {
         justify-self: right;
         @media (max-width: $breakpoint-md) {
@@ -190,6 +216,7 @@ footer {
     grid-gap: 0.5rem;
     grid-auto-rows: auto;
     grid-auto-flow: dense;
+    @include default-transition;
 
     div {
         display: grid;
@@ -197,7 +224,7 @@ footer {
         height: 100%;
         overflow: hidden;
         .gatsby-image-wrapper {
-            @include default-transition;
+            
             backface-visibility: hidden;
             overflow: inherit;
 
