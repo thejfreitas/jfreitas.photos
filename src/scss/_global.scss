@@ -212,7 +212,7 @@ footer {
 .gallery-area {
     padding: 0 1.5rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     grid-gap: 0.5rem;
     grid-auto-rows: auto;
     grid-auto-flow: dense;
