@@ -12,7 +12,7 @@ You might need to [set up your environment](https://www.gatsbyjs.org/tutorial/pa
 
 ### [NodeJs](https://nodejs.org/en/)
 
-`Expected version: >=14.15.0`
+`Expected version: >=18.12.1`
 
 ### [Yarn](https://yarnpkg.com/)
 
