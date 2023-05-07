@@ -29,7 +29,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-modal": "^3.16.1",
-    "sass": "^1.62.0"
+    "sass": "^1.62.1"
   },
   "devDependencies": {
     "gatsby-plugin-dark-mode": "^1.1.2",
